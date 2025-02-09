@@ -1,12 +1,14 @@
 
-## Looping in Java allows executing a block of code multiple times until a condition is met. There are three main types of loops:
+## Looping in Java allows executing a block of code multiple times until a condition is met.
+```
+ ## There are three main types of loops:
 ````
 For Loop – Used when the number of iterations is known beforehand.
 While Loop – Executes the loop as long as the condition remains true.
 Do-While Loop – Similar to while but ensures at least one execution before checking the condition.
 Loops help in reducing code repetition, making programs efficient and readable. Nested loops allow loops inside another loop for complex iterations.
 `````
-
+`````
 ### 1. Check whether a number is positive or negative  
 ```java
 import java.util.*;
