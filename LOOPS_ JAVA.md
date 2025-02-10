@@ -1247,6 +1247,1207 @@ public class Main {
 ```
 
 
+### **41. Implement a simple calculator using switch case**  
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+
+        System.out.print("Enter first number: ");
+        int a = s.nextInt();
+
+        System.out.print("Enter operator (+, -, *, /): ");
+        char op = s.next().charAt(0);
+
+        System.out.print("Enter second number: ");
+        int b = s.nextInt();
+
+        switch (op) {
+            case '+': System.out.println("Result: " + (a + b)); break;
+            case '-': System.out.println("Result: " + (a - b)); break;
+            case '*': System.out.println("Result: " + (a * b)); break;
+            case '/': 
+                if (b != 0) System.out.println("Result: " + (a / b));
+                else System.out.println("Cannot divide by zero");
+                break;
+            default: System.out.println("Invalid operator");
+        }
+    }
+}
+```
+
+---
+
+### **42. Convert a number to its word equivalent (1 to 10) using switch**  
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        
+        System.out.print("Enter a number (1-10): ");
+        int num = s.nextInt();
+        
+        switch (num) {
+            case 1: System.out.println("One"); break;
+            case 2: System.out.println("Two"); break;
+            case 3: System.out.println("Three"); break;
+            case 4: System.out.println("Four"); break;
+            case 5: System.out.println("Five"); break;
+            case 6: System.out.println("Six"); break;
+            case 7: System.out.println("Seven"); break;
+            case 8: System.out.println("Eight"); break;
+            case 9: System.out.println("Nine"); break;
+            case 10: System.out.println("Ten"); break;
+            default: System.out.println("Invalid number");
+        }
+    }
+}
+```
+
+---
+
+### **43. Find the day of the week using switch statement**  
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+
+        System.out.print("Enter a number (1-7): ");
+        int day = s.nextInt();
+
+        switch (day) {
+            case 1: System.out.println("Sunday"); break;
+            case 2: System.out.println("Monday"); break;
+            case 3: System.out.println("Tuesday"); break;
+            case 4: System.out.println("Wednesday"); break;
+            case 5: System.out.println("Thursday"); break;
+            case 6: System.out.println("Friday"); break;
+            case 7: System.out.println("Saturday"); break;
+            default: System.out.println("Invalid input");
+        }
+    }
+}
+```
+
+---
+
+### **44. Convert a number to its Roman numeral equivalent using switch**  
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+
+        System.out.print("Enter a number (1-10): ");
+        int num = s.nextInt();
+
+        switch (num) {
+            case 1: System.out.println("I"); break;
+            case 2: System.out.println("II"); break;
+            case 3: System.out.println("III"); break;
+            case 4: System.out.println("IV"); break;
+            case 5: System.out.println("V"); break;
+            case 6: System.out.println("VI"); break;
+            case 7: System.out.println("VII"); break;
+            case 8: System.out.println("VIII"); break;
+            case 9: System.out.println("IX"); break;
+            case 10: System.out.println("X"); break;
+            default: System.out.println("Invalid number");
+        }
+    }
+}
+```
+
+---
+
+### **45. Implement a basic menu-driven program using switch-case**  
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+
+        System.out.println("Menu:");
+        System.out.println("1. Say Hello");
+        System.out.println("2. Say Goodbye");
+        System.out.println("3. Exit");
+        
+        System.out.print("Enter your choice: ");
+        int choice = s.nextInt();
+
+        switch (choice) {
+            case 1: System.out.println("Hello!"); break;
+            case 2: System.out.println("Goodbye!"); break;
+            case 3: System.out.println("Exiting..."); break;
+            default: System.out.println("Invalid choice");
+        }
+    }
+}
+```
+
+---
+
+### **46. Print all numbers from 1 to n in reverse using switch**  
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+        int n = s.nextInt();
+
+        switch (1) {
+            case 1:
+                for (int i = n; i >= 1; i--) {
+                    System.out.print(i + " ");
+                }
+        }
+    }
+}
+```
+
+---
+
+### **47. Grade student marks using a switch-case statement**  
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+
+        System.out.print("Enter marks (0-100): ");
+        int marks = s.nextInt();
+        
+        switch (marks / 10) {
+            
+            case 9: System.out.println("Grade: A"); break;
+            case 8: System.out.println("Grade: B"); break;
+            case 7: System.out.println("Grade: C"); break;
+            case 6: System.out.println("Grade: D"); break;
+            case 4: System.out.println("Grade: E"); break;
+            default: System.out.println("Grade: F");
+        }
+    }
+}
+```
+
+
+
+---
+
+### **49. Convert temperature from Celsius to Fahrenheit or vice versa using switch**  
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+
+        System.out.println("1. Celsius to Fahrenheit");
+        System.out.println("2. Fahrenheit to Celsius");
+        
+        System.out.print("Enter choice: ");
+        int choice = s.nextInt();
+
+        System.out.print("Enter temperature: ");
+        float temp = s.nextFloat();
+
+        switch (choice) {
+            case 1: System.out.println("Fahrenheit: " + ((temp * 9 / 5) + 32)); break;
+            case 2: System.out.println("Celsius: " + ((temp - 32) * 5 / 9)); break;
+            default: System.out.println("Invalid choice");
+        }
+    }
+}
+```
+
+---
+
+### **50. Find the number of days in a month using switch-case**  
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+
+        System.out.print("Enter month number (1-12): ");
+        int month = s.nextInt();
+
+        switch (month) {
+            case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+                System.out.println("31 days"); break;
+            case 4: case 6: case 9: case 11:
+                System.out.println("30 days"); break;
+            case 2:
+                System.out.println("28 or 29 days"); break;
+            default:
+                System.out.println("Invalid month");
+        }
+    }
+}
+```
+
+### **51. Implement a simple banking system with switch-case**  
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int balance = 1000;
+
+        System.out.println("1. Check Balance");
+        System.out.println("2. Deposit");
+        System.out.println("3. Withdraw");
+        System.out.print("Enter your choice: ");
+        int choice = s.nextInt();
+
+        switch (choice) {
+            case 1: System.out.println("Balance: $" + balance); break;
+            case 2: 
+                System.out.print("Enter amount to deposit: ");
+                int deposit = s.nextInt();
+                balance += deposit;
+                System.out.println("New Balance: $" + balance);
+                break;
+            case 3:
+                System.out.print("Enter amount to withdraw: ");
+                int withdraw = s.nextInt();
+                if (withdraw <= balance) {
+                    balance -= withdraw;
+                    System.out.println("New Balance: $" + balance);
+                } else {
+                    System.out.println("Insufficient balance");
+                }
+                break;
+            default: System.out.println("Invalid choice");
+        }
+    }
+}
+```
+
+---
+
+### **52. Determine the month name based on its number using switch-case**  
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        
+        System.out.print("Enter month number (1-12): ");
+        int month = s.nextInt();
+        
+        switch (month) {
+            case 1: System.out.println("January"); break;
+            case 2: System.out.println("February"); break;
+            case 3: System.out.println("March"); break;
+            case 4: System.out.println("April"); break;
+            case 5: System.out.println("May"); break;
+            case 6: System.out.println("June"); break;
+            case 7: System.out.println("July"); break;
+            case 8: System.out.println("August"); break;
+            case 9: System.out.println("September"); break;
+            case 10: System.out.println("October"); break;
+            case 11: System.out.println("November"); break;
+            case 12: System.out.println("December"); break;
+            default: System.out.println("Invalid month");
+        }
+    }
+}
+```
+
+---
+
+### **53. Calculate the area of different shapes using switch-case**  
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+
+        System.out.println("1. Circle");
+        System.out.println("2. Rectangle");
+        System.out.println("3. Triangle");
+        System.out.print("Enter your choice: ");
+        int choice = s.nextInt();
+
+        switch (choice) {
+            case 1:
+                System.out.print("Enter radius: ");
+                float r = s.nextFloat();
+                System.out.println("Area: " + (3.14 * r * r));
+                break;
+            case 2:
+                System.out.print("Enter length: ");
+                float l = s.nextFloat();
+                System.out.print("Enter width: ");
+                float w = s.nextFloat();
+                System.out.println("Area: " + (l * w));
+                break;
+            case 3:
+                System.out.print("Enter base: ");
+                float b = s.nextFloat();
+                System.out.print("Enter height: ");
+                float h = s.nextFloat();
+                System.out.println("Area: " + (0.5 * b * h));
+                break;
+            default: System.out.println("Invalid choice");
+        }
+    }
+}
+```
+
+
+### **55. Determine if a given character is a vowel or consonant using switch-case**  
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        
+        System.out.print("Enter a character: ");
+        char ch = s.next().toLowerCase().charAt(0);
+        
+        switch (ch) {
+            case 'a': case 'e': case 'i': case 'o': case 'u':
+                System.out.println("Vowel");
+                break;
+            default:
+                if (Character.isLetter(ch)) System.out.println("Consonant");
+                else System.out.println("Not a letter");
+        }
+    }
+}
+```
+
+---
+
+### **56. Implement a simple menu system for shopping**  
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+
+        System.out.println("1. Buy Apple - $2");
+        System.out.println("2. Buy Banana - $1");
+        System.out.println("3. Buy Orange - $3");
+        System.out.print("Enter your choice: ");
+        int choice = s.nextInt();
+
+        switch (choice) {
+            case 1: System.out.println("You bought an Apple"); break;
+            case 2: System.out.println("You bought a Banana"); break;
+            case 3: System.out.println("You bought an Orange"); break;
+            default: System.out.println("Invalid choice");
+        }
+    }
+}
+```
+
+---
+
+### **57. Convert a time duration in minutes to hours and minutes**  
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+
+        System.out.print("Enter time in minutes: ");
+        int minutes = s.nextInt();
+
+        int hours = minutes / 60;
+        int remainingMinutes = minutes % 60;
+
+        System.out.println("Time: " + hours + " hours " + remainingMinutes + " minutes");
+    }
+}
+```
+
+
+
+### **59. Implement a traffic light system using switch**  
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+
+        System.out.print("Enter traffic light color (Red, Yellow, Green): ");
+        String color = s.next().toLowerCase();
+
+        switch (color) {
+            case "red": System.out.println("Stop!"); break;
+            case "yellow": System.out.println("Get Ready!"); break;
+            case "green": System.out.println("Go!"); break;
+            default: System.out.println("Invalid color");
+        }
+    }
+}
+```
+
+---
+
+### **60. Solve a quadratic equation using switch-case for the discriminant**  
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+
+        System.out.print("Enter coefficient a: ");
+        double a = s.nextDouble();
+        System.out.print("Enter coefficient b: ");
+        double b = s.nextDouble();
+        System.out.print("Enter coefficient c: ");
+        double c = s.nextDouble();
+
+        double d = (b * b) - (4 * a * c);
+
+        switch (d > 0 ? 1 : (d == 0 ? 0 : -1)) {
+            case 1:
+                double root1 = (-b + Math.sqrt(d)) / (2 * a);
+                double root2 = (-b - Math.sqrt(d)) / (2 * a);
+                System.out.println("Two Real Roots: " + root1 + " and " + root2);
+                break;
+            case 0:
+                double root = -b / (2 * a);
+                System.out.println("One Real Root: " + root);
+                break;
+            case -1:
+                System.out.println("No Real Roots");
+                break;
+        }
+    }
+}
+
+
+## **61. Print numbers from 1 to 10 using for loop**
+### **Code**
+```java
+public class Main {
+    public static void main(String[] args) {
+        for (int i = 1; i <= 10; i++) {
+            System.out.print(i + " ");
+        }
+    }
+}
+```
+### **Output**
+```
+1 2 3 4 5 6 7 8 9 10
+```
+
+---
+
+## **62. Print the multiplication table of a number using for loop**
+### **Code**
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+        int num = s.nextInt();
+
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(num + " x " + i + " = " + (num * i));
+        }
+    }
+}
+```
+### **Input**
+```
+Enter a number: 5
+```
+### **Output**
+```
+5 x 1 = 5
+5 x 2 = 10
+5 x 3 = 15
+5 x 4 = 20
+5 x 5 = 25
+5 x 6 = 30
+5 x 7 = 35
+5 x 8 = 40
+5 x 9 = 45
+5 x 10 = 50
+```
+
+---
+
+## **63. Calculate the factorial of a number using a for loop**
+### **Code**
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+        int num = s.nextInt();
+        int fact = 1;
+
+        for (int i = 1; i <= num; i++) {
+            fact *= i;
+        }
+
+        System.out.println("Factorial: " + fact);
+    }
+}
+```
+### **Input**
+```
+Enter a number: 5
+```
+### **Output**
+```
+Factorial: 120
+```
+
+---
+
+## **64. Print Fibonacci series up to n terms using for loop**
+### **Code**
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+
+        System.out.print("Enter number of terms: ");
+        int n = s.nextInt();
+
+        int a = 0, b = 1;
+        System.out.print(a + " " + b + " ");
+
+        for (int i = 3; i <= n; i++) {
+            int next = a + b;
+            System.out.print(next + " ");
+            a = b;
+            b = next;
+        }
+    }
+}
+```
+### **Input**
+```
+Enter number of terms: 6
+```
+### **Output**
+```
+0 1 1 2 3 5
+```
+
+---
+
+## **65. Sum of digits of a number using a for loop**
+### **Code**
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+        int num = s.nextInt();
+        int sum = 0;
+
+        for (; num > 0; num /= 10) {
+            sum += num % 10;
+        }
+
+        System.out.println("Sum of digits: " + sum);
+    }
+}
+```
+### **Input**
+```
+Enter a number: 123
+```
+### **Output**
+```
+Sum of digits: 6
+```
+
+---
+
+## **66. Print prime numbers up to a given number using for loop**
+### **Code**
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+        int n = s.nextInt();
+
+        for (int i = 2; i <= n; i++) {
+            boolean isPrime = true;
+            for (int j = 2; j * j <= i; j++) {
+                if (i % j == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+            if (isPrime) System.out.print(i + " ");
+        }
+    }
+}
+```
+### **Input**
+```
+Enter a number: 20
+```
+### **Output**
+```
+2 3 5 7 11 13 17 19
+```
+
+---
+
+## **67. Reverse a number using for loop**
+### **Code**
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+        int num = s.nextInt();
+        int rev = 0;
+
+        while(num>0) {
+           num=num/10;
+            rev = rev * 10 + num % 10;
+        }
+
+        System.out.println("Reversed Number: " + rev);
+    }
+}
+```
+### **Input**
+```
+Enter a number: 1234
+```
+### **Output**
+```
+Reversed Number: 4321
+```
+
+---
+
+## **68. Check whether a number is prime or not using a for loop**
+### **Code**
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+        int num = s.nextInt();
+        boolean isPrime = true;
+
+        for (int i = 2; i * i <= num; i++) {
+            if (num % i == 0) {
+                isPrime = false;
+                break;
+            }
+        }
+
+        if (isPrime && num > 1) {
+       System.out.println("Prime");
+}
+        else{
+ System.out.println("Not Prime");
+}
+    }
+}
+```
+### **Input**
+```
+Enter a number: 17
+```
+### **Output**
+```
+Prime
+```
+
+---
+
+## **69. Calculate the sum of even numbers from 1 to n using a for loop**
+### **Code**
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+
+        System.out.print("Enter n: ");
+        int n = s.nextInt();
+        int sum = 0;
+
+        for (int i = 2; i <= n; i += 2) {
+            sum += i;
+        }
+
+        System.out.println("Sum of even numbers: " + sum);
+    }
+}
+```
+### **Input**
+```
+Enter n: 10
+```
+### **Output**
+```
+Sum of even numbers: 30
+```
+
+---
+
+## **70. Calculate the sum of odd numbers from 1 to n using a for loop**
+### **Code**
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+
+        System.out.print("Enter n: ");
+        int n = s.nextInt();
+        int sum = 0;
+
+        for (int i = 1; i <= n; i += 2) {
+            sum += i;
+        }
+
+        System.out.println("Sum of odd numbers: " + sum);
+    }
+}
+```
+### **Input**
+```
+Enter n: 10
+```
+### **Output**
+```
+Sum of odd numbers: 25
+```
+
+
+
+## **71. Print a pyramid pattern using for loop**
+### **Code**
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+
+        System.out.print("Enter number of rows: ");
+        int n = s.nextInt();
+
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n - i; j++) System.out.print(" ");
+            for (int j = 1; j <= 2 * i - 1; j++) System.out.print("*");
+            System.out.println();
+        }
+    }
+}
+```
+### **Input**
+```
+Enter number of rows: 5
+```
+### **Output**
+```
+    *  
+   ***  
+  *****  
+ *******  
+*********
+```
+
+---
+
+## **72. Print a reverse triangle pattern using for loop**
+### **Code**
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+
+        System.out.print("Enter number of rows: ");
+        int n = s.nextInt();
+
+        for (int i = n; i >= 1; i--) {
+            for (int j = 1; j <= n - i; j++){
+          System.out.print(" ");
+}
+            for (int j = 1; j <= 2 * i - 1; j++){
+           System.out.print("*");
+}
+            System.out.println();
+        }
+    }
+}
+```
+### **Input**
+```
+Enter number of rows: 5
+```
+### **Output**
+```
+*********
+ *******  
+  *****  
+   ***  
+    *  
+```
+
+---
+
+## **73. Find the largest number in an array using a for loop**
+### **Code**
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+
+        System.out.print("Enter the number of elements: ");
+        int n = s.nextInt();
+        int arr[] = new int[n];
+
+        System.out.println("Enter the elements: ");
+        for (int i = 0; i < n; i++) {
+            arr[i] = s.nextInt();
+        }
+
+        int max = arr[0];
+        for (int i = 1; i < n; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
+            }
+        }
+
+        System.out.println("Largest number: " + max);
+    }
+}
+```
+### **Input**
+```
+Enter the number of elements: 5
+Enter the elements:
+10 25 36 5 12
+```
+### **Output**
+```
+Largest number: 36
+```
+
+---
+
+## **74. Print a series of squares (1, 4, 9, ...) using for loop**
+### **Code**
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+
+        System.out.print("Enter n: ");
+        int n = s.nextInt();
+
+        for (int i = 1; i <= n; i++) {
+            System.out.print((i * i) + " ");
+        }
+    }
+}
+```
+### **Input**
+```
+Enter n: 5
+```
+### **Output**
+```
+1 4 9 16 25
+```
+
+---
+
+## **75. Count the number of even numbers in a range**
+### **Code**
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+
+        System.out.print("Enter start number: ");
+        int start = s.nextInt();
+        System.out.print("Enter end number: ");
+        int end = s.nextInt();
+
+        int count = 0;
+        for (int i = start; i <= end; i++) {
+            if (i % 2 == 0) {
+                count++;
+            }
+        }
+
+        System.out.println("Count of even numbers: " + count);
+    }
+}
+```
+### **Input**
+```
+Enter start number: 1
+Enter end number: 10
+```
+### **Output**
+```
+Count of even numbers: 5
+```
+
+---
+
+## **76. Print all prime numbers between two numbers**
+### **Code**
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+
+        System.out.print("Enter start number: ");
+        int start = s.nextInt();
+        System.out.print("Enter end number: ");
+        int end = s.nextInt();
+
+        for (int i = start; i <= end; i++) {
+            boolean isPrime = true;
+            if (i < 2) continue;
+            for (int j = 2; j * j <= i; j++) {
+                if (i % j == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+            if (isPrime) System.out.print(i + " ");
+        }
+    }
+}
+```
+### **Input**
+```
+Enter start number: 10
+Enter end number: 30
+```
+### **Output**
+```
+11 13 17 19 23 29
+```
+
+---
+
+## **77. Find the sum of all elements in an array using a for loop**
+### **Code**
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+
+        System.out.print("Enter the number of elements: ");
+        int n = s.nextInt();
+        int arr[] = new int[n];
+
+        System.out.println("Enter the elements: ");
+        for (int i = 0; i < n; i++) {
+            arr[i] = s.nextInt();
+        }
+
+        int sum = 0;
+        for (int i = 0; i < n; i++) {
+            sum += arr[i];
+        }
+
+        System.out.println("Sum of elements: " + sum);
+    }
+}
+```
+### **Input**
+```
+Enter the number of elements: 5
+Enter the elements:
+10 20 30 40 50
+```
+### **Output**
+```
+Sum of elements: 150
+```
+
+---
+
+## **78. Calculate the average of an array using a for loop**
+### **Code**
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+
+        System.out.print("Enter the number of elements: ");
+        int n = s.nextInt();
+        int arr[] = new int[n];
+
+        System.out.println("Enter the elements: ");
+        for (int i = 0; i < n; i++) {
+            arr[i] = s.nextInt();
+        }
+
+        int sum = 0;
+        for (int i = 0; i < n; i++) {
+            sum += arr[i];
+        }
+
+        double average = (double) sum / n;
+        System.out.println("Average: " + average);
+    }
+}
+```
+### **Input**
+```
+Enter the number of elements: 5
+Enter the elements:
+10 20 30 40 50
+```
+### **Output**
+```
+Average: 30.0
+```
+
+## **79. Print a number pattern using for loop**
+### **Code**
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+
+        System.out.print("Enter number of rows: ");
+        int n = s.nextInt();
+
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(j + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+```
+### **Input**
+```
+Enter number of rows: 5
+```
+### **Output**
+```
+1  
+1 2  
+1 2 3  
+1 2 3 4  
+1 2 3 4 5
+```
+
+---
+
+## **80. Print Pascal’s Triangle using nested for loops**
+### **Code**
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+
+        System.out.print("Enter number of rows: ");
+        int n = s.nextInt();
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j <= n - i; j++) {
+                System.out.print(" ");
+            }
+            int num = 1;
+            for (int j = 0; j <= i; j++) {
+                System.out.print(num + " ");
+                num = num * (i - j) / (j + 1);
+            }
+            System.out.println();
+        }
+    }
+}
+```
+### **Input**
+```
+Enter number of rows: 5
+```
+### **Output**
+```
+     1  
+    1 1  
+   1 2 1  
+  1 3 3 1  
+ 1 4 6 4 1  
+```
+
+
+
 
 ## **81-90: Java Programs Using While Loop**
 ---
