@@ -9,7 +9,7 @@ Loops help in reducing code repetition, making programs efficient and readable. 
 
 `````
 ### 1. Check whether a number is positive or negative  
-```java
+```java   
 import java.util.*;
 
 public class Main {
