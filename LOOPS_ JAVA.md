@@ -2732,3 +2732,625 @@ public class Main {
 24
 ```
 
+
+### **91. Find the largest prime number in a given range**
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int start = s.nextInt();
+        int end = s.nextInt();
+        int largestPrime = -1;
+
+        while (end >= start) {
+            int i = 2, flag = 1;
+            if (end < 2) break;
+            while (i * i <= end) {
+                if (end % i == 0) {
+                    flag = 0;
+                    break;
+                }
+                i++;
+            }
+            if (flag == 1) {
+                largestPrime = end;
+                break;
+            }
+            end--;
+        }
+        System.out.println(largestPrime);
+    }
+}
+```
+**Input:**  
+```
+10 50
+```
+**Output:**  
+```
+47
+```
+
+---
+
+### **92. Print all prime numbers up to n using a while loop**
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int n = s.nextInt();
+        int num = 2;
+
+        while (num <= n) {
+            int i = 2, flag = 1;
+            while (i * i <= num) {
+                if (num % i == 0) {
+                    flag = 0;
+                    break;
+                }
+                i++;
+            }
+            if (flag == 1) System.out.print(num + " ");
+            num++;
+        }
+    }
+}
+```
+**Input:**  
+```
+20
+```
+**Output:**  
+```
+2 3 5 7 11 13 17 19
+```
+
+---
+
+### **93. Find the greatest common divisor (GCD) using while loop**
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int a = s.nextInt();
+        int b = s.nextInt();
+
+        while (b != 0) {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
+        System.out.println(a);
+    }
+}
+```
+**Input:**  
+```
+48 18
+```
+**Output:**  
+```
+6
+```
+
+---
+
+### **94. Implement a simple ATM menu using a while loop**
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int balance = 1000;
+
+        while (true) {
+            int choice = s.nextInt();
+            if (choice == 1) System.out.println(balance);
+            else if (choice == 2) {
+                int amount = s.nextInt();
+                if (amount <= balance) balance -= amount;
+            } else if (choice == 3) {
+                int amount = s.nextInt();
+                balance += amount;
+            } else if (choice == 4) break;
+        }
+    }
+}
+```
+**Input:**  
+```
+1
+```
+**Output:**  
+```
+1000
+```
+
+---
+
+### **95. Reverse a string using while loop**
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        String str = s.next();
+        String rev = "";
+        int i = str.length() - 1;
+
+        while (i >= 0) {
+            rev += str.charAt(i);
+            i--;
+        }
+        System.out.println(rev);
+    }
+}
+```
+**Input:**  
+```
+hello
+```
+**Output:**  
+```
+olleh
+```
+
+---
+
+### **96. Sum all odd numbers in a range using while loop**
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int start = s.nextInt();
+        int end = s.nextInt();
+        int sum = 0;
+
+        while (start <= end) {
+            if (start % 2 != 0) sum += start;
+            start++;
+        }
+        System.out.println(sum);
+    }
+}
+```
+**Input:**  
+```
+1 10
+```
+**Output:**  
+```
+25
+```
+
+---
+
+### **97. Check if a number is prime using while loop**
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int num = s.nextInt();
+        int i = 2, flag = 1;
+
+        while (i * i <= num) {
+            if (num % i == 0) {
+                flag = 0;
+                break;
+            }
+            i++;
+        }
+        System.out.println(flag == 1 && num > 1 ? "Prime" : "Not Prime");
+    }
+}
+```
+**Input:**  
+```
+17
+```
+**Output:**  
+```
+Prime
+```
+
+---
+
+### **98. Find the factorial of a number using while loop**
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int num = s.nextInt();
+        int fact = 1;
+
+        while (num > 1) {
+            fact *= num;
+            num--;
+        }
+        System.out.println(fact);
+    }
+}
+```
+**Input:**  
+```
+5
+```
+**Output:**  
+```
+120
+```
+
+---
+
+### **99. Print even numbers from a range using while loop**
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int start = s.nextInt();
+        int end = s.nextInt();
+
+        while (start <= end) {
+            if (start % 2 == 0) System.out.print(start + " ");
+            start++;
+        }
+    }
+}
+```
+**Input:**  
+```
+1 10
+```
+**Output:**  
+```
+2 4 6 8 10
+```
+
+---
+
+### **100. Find the sum of even and odd digits of a number**
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int num = s.nextInt();
+        int evenSum = 0, oddSum = 0;
+
+        while (num > 0) {
+            int digit = num % 10;
+            if (digit % 2 == 0) evenSum += digit;
+            else oddSum += digit;
+            num /= 10;
+        }
+        System.out.println(evenSum + " " + oddSum);
+    }
+}
+```
+**Input:**  
+```
+1234
+```
+**Output:**  
+```
+6 4
+```
+
+
+### **101. Print numbers from 1 to 10 using do-while loop**
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        int i = 1;
+        do {
+            System.out.print(i + " ");
+            i++;
+        } while (i <= 10);
+    }
+}
+```
+**Output:**  
+```
+1 2 3 4 5 6 7 8 9 10
+```
+
+---
+
+### **102. Sum of all even numbers using do-while loop**
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int start = s.nextInt();
+        int end = s.nextInt();
+        int sum = 0;
+
+        do {
+            if (start % 2 == 0) sum += start;
+            start++;
+        } while (start <= end);
+
+        System.out.println(sum);
+    }
+}
+```
+**Input:**  
+```
+1 10
+```
+**Output:**  
+```
+30
+```
+
+---
+
+### **103. Print all odd numbers in a range using do-while loop**
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int start = s.nextInt();
+        int end = s.nextInt();
+
+        do {
+            if (start % 2 != 0) System.out.print(start + " ");
+            start++;
+        } while (start <= end);
+    }
+}
+```
+**Input:**  
+```
+1 10
+```
+**Output:**  
+```
+1 3 5 7 9
+```
+
+---
+
+### **104. Calculate the factorial of a number using do-while loop**
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int num = s.nextInt();
+        int fact = 1;
+
+        do {
+            fact *= num;
+            num--;
+        } while (num > 1);
+
+        System.out.println(fact);
+    }
+}
+```
+**Input:**  
+```
+5
+```
+**Output:**  
+```
+120
+```
+
+---
+
+### **105. Reverse a number using do-while loop**
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int num = s.nextInt();
+        int rev = 0;
+
+        do {
+            rev = rev * 10 + num % 10;
+            num /= 10;
+        } while (num > 0);
+
+        System.out.println(rev);
+    }
+}
+```
+**Input:**  
+```
+1234
+```
+**Output:**  
+```
+4321
+```
+
+---
+
+### **106. Count the number of digits in a number using do-while loop**
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int num = s.nextInt();
+        int count = 0;
+
+        do {
+            count++;
+            num /= 10;
+        } while (num > 0);
+
+        System.out.println(count);
+    }
+}
+```
+**Input:**  
+```
+1234
+```
+**Output:**  
+```
+4
+```
+
+---
+
+### **107. Check if a number is prime using do-while loop**
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int num = s.nextInt();
+        int i = 2, flag = 1;
+
+        do {
+            if (num % i == 0) {
+                flag = 0;
+                break;
+            }
+            i++;
+        } while (i * i <= num);
+
+        if (flag == 1 && num > 1) System.out.println("Prime");
+        else System.out.println("Not Prime");
+    }
+}
+```
+**Input:**  
+```
+17
+```
+**Output:**  
+```
+Prime
+```
+
+---
+
+### **108. Find the GCD of two numbers using do-while loop**
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int a = s.nextInt();
+        int b = s.nextInt();
+
+        do {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        } while (b != 0);
+
+        System.out.println(a);
+    }
+}
+```
+**Input:**  
+```
+48 18
+```
+**Output:**  
+```
+6
+```
+
+---
+
+### **109. Print Fibonacci series up to n terms using do-while loop**
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int n = s.nextInt();
+        int a = 0, b = 1, i = 0;
+
+        do {
+            System.out.print(a + " ");
+            int temp = a + b;
+            a = b;
+            b = temp;
+            i++;
+        } while (i < n);
+    }
+}
+```
+**Input:**  
+```
+5
+```
+**Output:**  
+```
+0 1 1 2 3
+```
+
+---
+
+### **110. Check if a string is a palindrome using do-while loop**
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        String str = s.next();
+        int i = 0, j = str.length() - 1, flag = 1;
+
+        do {
+            if (str.charAt(i) != str.charAt(j)) {
+                flag = 0;
+                break;
+            }
+            i++;
+            j--;
+        } while (i < j);
+
+        if (flag == 1) System.out.println("Palindrome");
+        else System.out.println("Not Palindrome");
+    }
+}
+```
+**Input:**  
+```
+madam
+```
+**Output:**  
+```
+Palindrome
+```
+
+---
