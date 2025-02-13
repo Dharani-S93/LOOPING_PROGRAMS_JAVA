@@ -3353,4 +3353,964 @@ madam
 Palindrome
 ```
 
+
+
+### 111. Print a Pattern of Stars Using `do-while` Loop  
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int n = s.nextInt();
+        int i = 1;
+        
+        do {
+            int j = 1;
+            do {
+                System.out.print("* ");
+                j++;
+            } while (j <= i);
+            System.out.println();
+            i++;
+        } while (i <= n);
+    }
+}
+```
+
 ---
+
+### 112. Sum All Digits of a Number Using `do-while` Loop  
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int n = s.nextInt();
+        int sum = 0;
+        
+        do {
+            sum += n % 10;
+            n /= 10;
+        } while (n > 0);
+        
+        System.out.println(sum);
+    }
+}
+```
+
+---
+
+### 113. Reverse a String Using `do-while` Loop  
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        String str = s.next();
+        String rev = "";
+        int i = str.length() - 1;
+        
+        do {
+            rev += str.charAt(i);
+            i--;
+        } while (i >= 0);
+        
+        System.out.println(rev);
+    }
+}
+```
+
+---
+
+### 114. Find the Largest Prime Number in a Given Range Using `do-while` Loop  
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int start = s.nextInt();
+        int end = s.nextInt();
+        int largestPrime = -1;
+        
+        do {
+            if (isPrime(end)) {
+                largestPrime = end;
+                break;
+            }
+            end--;
+        } while (end >= start);
+        
+        System.out.println(largestPrime);
+    }
+    
+    public static boolean isPrime(int n) {
+        if (n < 2) return false;
+        int i = 2;
+        do {
+            if (n % i == 0) return false;
+            i++;
+        } while (i * i <= n);
+        return true;
+    }
+}
+```
+
+---
+
+### 115. Print All Numbers Divisible by 5 Within a Range Using `do-while` Loop  
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int start = s.nextInt();
+        int end = s.nextInt();
+        
+        do {
+            if (start % 5 == 0) {
+                System.out.println(start);
+            }
+            start++;
+        } while (start <= end);
+    }
+}
+```
+
+---
+
+### 116. Calculate the Sum of Squares of Numbers in a Range Using `do-while` Loop  
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int start = s.nextInt();
+        int end = s.nextInt();
+        int sum = 0;
+        
+        do {
+            sum += start * start;
+            start++;
+        } while (start <= end);
+        
+        System.out.println(sum);
+    }
+}
+```
+
+---
+
+### 117. Print the Fibonacci Sequence Up to a Given Limit Using `do-while` Loop  
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int limit = s.nextInt();
+        int a = 0, b = 1;
+        
+        do {
+            System.out.println(a);
+            int temp = a + b;
+            a = b;
+            b = temp;
+        } while (a <= limit);
+    }
+}
+```
+
+---
+
+### 118. Check If a Number Is a Perfect Number Using `do-while` Loop  
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int n = s.nextInt();
+        int sum = 0, i = 1;
+        
+        do {
+            if (n % i == 0) {
+                sum += i;
+            }
+            i++;
+        } while (i <= n / 2);
+        
+        if (sum == n) {
+            System.out.println("Perfect");
+        } else {
+            System.out.println("Not Perfect");
+        }
+    }
+}
+```
+
+---
+
+### 119. Find Armstrong Numbers in a Range Using `do-while` Loop  
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int start = s.nextInt();
+        int end = s.nextInt();
+        
+        do {
+            if (isArmstrong(start)) {
+                System.out.println(start);
+            }
+            start++;
+        } while (start <= end);
+    }
+    
+    public static boolean isArmstrong(int num) {
+        int temp = num, sum = 0, digits = String.valueOf(num).length();
+        
+        do {
+            int digit = temp % 10;
+            sum += Math.pow(digit, digits);
+            temp /= 10;
+        } while (temp > 0);
+        
+        return sum == num;
+    }
+}
+```
+
+### **121. Print a Multiplication Table Using Nested Loops**  
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int n = s.nextInt();
+        
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(n + " x " + i + " = " + (n * i));
+        }
+    }
+}
+```
+**Input:**  
+```
+5
+```
+**Output:**  
+```
+5 x 1 = 5
+5 x 2 = 10
+...
+5 x 10 = 50
+```
+---
+
+### **122. Print an Inverted Triangle Pattern Using Nested Loops**  
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int n = s.nextInt();
+        
+        for (int i = n; i >= 1; i--) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+}
+```
+**Input:**  
+```
+4
+```
+**Output:**  
+```
+* * * * 
+* * *  
+* *  
+*  
+```
+---
+
+### **123. Print a Pyramid Pattern Using Nested Loops**  
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int n = s.nextInt();
+        
+        for (int i = 1; i <= n; i++) {
+            for (int j = i; j < n; j++) {
+                System.out.print(" ");
+            }
+            for (int j = 1; j <= (2 * i - 1); j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}
+```
+**Input:**  
+```
+4
+```
+**Output:**  
+```
+   *  
+  ***  
+ *****  
+*******
+```
+---
+
+### **124. Print a Diamond Shape Pattern Using Nested Loops**  
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int n = s.nextInt();
+
+        for (int i = 1; i <= n; i++) {
+            for (int j = i; j < n; j++) System.out.print(" ");
+            for (int j = 1; j <= (2 * i - 1); j++) System.out.print("*");
+            System.out.println();
+        }
+        for (int i = n - 1; i >= 1; i--) {
+            for (int j = n; j > i; j--) System.out.print(" ");
+            for (int j = 1; j <= (2 * i - 1); j++) System.out.print("*");
+            System.out.println();
+        }
+    }
+}
+```
+**Input:**  
+```
+3
+```
+**Output:**  
+```
+  *  
+ ***  
+*****  
+ ***  
+  *  
+```
+---
+
+### **125. Print a Hollow Square Pattern Using Nested Loops**  
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int n = s.nextInt();
+        
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n; j++) {
+                if (i == 1 || i == n || j == 1 || j == n)
+                    System.out.print("* ");
+                else
+                    System.out.print("  ");
+            }
+            System.out.println();
+        }
+    }
+}
+```
+**Input:**  
+```
+5
+```
+**Output:**  
+```
+* * * * *  
+*       *  
+*       *  
+*       *  
+* * * * *  
+```
+---
+
+### **126. Print a Number Triangle Using Nested Loops**  
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int n = s.nextInt();
+
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(j + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+```
+**Input:**  
+```
+5
+```
+**Output:**  
+```
+1  
+1 2  
+1 2 3  
+1 2 3 4  
+1 2 3 4 5  
+```
+---
+
+### **127. Check for Prime Numbers Within a Range Using Nested Loops**  
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int start = s.nextInt();
+        int end = s.nextInt();
+
+        for (int i = start; i <= end; i++) {
+            boolean isPrime = true;
+            for (int j = 2; j * j <= i; j++) {
+                if (i % j == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+            if (isPrime && i > 1) System.out.println(i);
+        }
+    }
+}
+```
+**Input:**  
+```
+10 20
+```
+**Output:**  
+```
+11  
+13  
+17  
+19  
+```
+---
+
+### **128. Generate Pascal's Triangle Using Nested Loops**  
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int n = s.nextInt();
+
+        for (int i = 0; i < n; i++) {
+            int num = 1;
+            for (int j = 0; j <= i; j++) {
+                System.out.print(num + " ");
+                num = num * (i - j) / (j + 1);
+            }
+            System.out.println();
+        }
+    }
+}
+```
+**Input:**  
+```
+5
+```
+**Output:**  
+```
+1  
+1 1  
+1 2 1  
+1 3 3 1  
+1 4 6 4 1  
+```
+Thanks for your patience! Here are the remaining programs with input and output examples.  
+
+---
+
+### **129. Print a Number Pattern with Asterisks Using Nested Loops**  
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int n = s.nextInt();
+        
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(j + " ");
+            }
+            System.out.print("* ");
+            System.out.println();
+        }
+    }
+}
+```
+**Input:**  
+```
+5
+```
+**Output:**  
+```
+1 *  
+1 2 *  
+1 2 3 *  
+1 2 3 4 *  
+1 2 3 4 5 *  
+```
+---
+
+### **130. Print All Possible Combinations of Two Arrays Using Nested Loops**  
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        
+        int n = s.nextInt();
+        int[] arr1 = new int[n];
+        for (int i = 0; i < n; i++) arr1[i] = s.nextInt();
+        
+        int m = s.nextInt();
+        int[] arr2 = new int[m];
+        for (int i = 0; i < m; i++) arr2[i] = s.nextInt();
+        
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                System.out.println(arr1[i] + ", " + arr2[j]);
+            }
+        }
+    }
+}
+```
+**Input:**  
+```
+3  
+1 2 3  
+2  
+4 5  
+```
+**Output:**  
+```
+1, 4  
+1, 5  
+2, 4  
+2, 5  
+3, 4  
+3, 5  
+```
+---
+
+### **131. Create a Matrix and Perform Transpose Using Nested Loops**  
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int rows = s.nextInt();
+        int cols = s.nextInt();
+        int[][] matrix = new int[rows][cols];
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                matrix[i][j] = s.nextInt();
+            }
+        }
+
+        System.out.println("Transpose:");
+        for (int j = 0; j < cols; j++) {
+            for (int i = 0; i < rows; i++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+```
+**Input:**  
+```
+2 3  
+1 2 3  
+4 5 6  
+```
+**Output:**  
+```
+Transpose:  
+1 4  
+2 5  
+3 6  
+```
+---
+
+### **132. Count the Number of Vowels and Consonants in a String Using Nested Loops**  
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        String str = s.nextLine().toLowerCase();
+        
+        int vowels = 0, consonants = 0;
+        String vowelSet = "aeiou";
+        
+        for (char ch : str.toCharArray()) {
+            if (Character.isLetter(ch)) {
+                if (vowelSet.indexOf(ch) != -1) vowels++;
+                else consonants++;
+            }
+        }
+        
+        System.out.println("Vowels: " + vowels);
+        System.out.println("Consonants: " + consonants);
+    }
+}
+```
+**Input:**  
+```
+hello world
+```
+**Output:**  
+```
+Vowels: 3  
+Consonants: 7  
+```
+---
+
+### **133. Create a Multiplication Matrix Using Nested Loops**  
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int n = s.nextInt();
+
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n; j++) {
+                System.out.print((i * j) + "\t");
+            }
+            System.out.println();
+        }
+    }
+}
+```
+**Input:**  
+```
+3
+```
+**Output:**  
+```
+1   2   3  
+2   4   6  
+3   6   9  
+```
+---
+
+### **134. Print an Alphabet Pattern Using Nested Loops**  
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int n = s.nextInt();
+        
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j <= i; j++) {
+                System.out.print((char) ('A' + j) + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+```
+**Input:**  
+```
+4
+```
+**Output:**  
+```
+A  
+A B  
+A B C  
+A B C D  
+```
+
+### **135. Find All Prime Numbers Between Two Numbers Using Nested Loops**  
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int start = s.nextInt();
+        int end = s.nextInt();
+
+        for (int i = start; i <= end; i++) {
+            boolean isPrime = true;
+            for (int j = 2; j * j <= i; j++) {
+                if (i % j == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+            if (isPrime && i > 1) System.out.println(i);
+        }
+    }
+}
+```
+**Input:**  
+```
+10 20
+```
+**Output:**  
+```
+11  
+13  
+17  
+19  
+```
+---
+
+### **136. Create a 2D Array and Initialize It with User Input Using Nested Loops**  
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int rows = s.nextInt();
+        int cols = s.nextInt();
+        int[][] matrix = new int[rows][cols];
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                matrix[i][j] = s.nextInt();
+            }
+        }
+
+        System.out.println("Matrix:");
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+```
+**Input:**  
+```
+2 3  
+1 2 3  
+4 5 6  
+```
+**Output:**  
+```
+Matrix:  
+1 2 3  
+4 5 6  
+```
+---
+
+### **137. Find the Diagonal Elements of a Matrix Using Nested Loops**  
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int n = s.nextInt();
+        int[][] matrix = new int[n][n];
+
+        for (int i = 0; i < n; i++)
+            for (int j = 0; j < n; j++)
+                matrix[i][j] = s.nextInt();
+
+        System.out.println("Diagonal Elements:");
+        for (int i = 0; i < n; i++)
+            System.out.print(matrix[i][i] + " ");
+    }
+}
+```
+**Input:**  
+```
+3  
+1 2 3  
+4 5 6  
+7 8 9  
+```
+**Output:**  
+```
+Diagonal Elements: 1 5 9  
+```
+---
+
+### **138. Create a Number Grid Using Nested Loops**  
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int n = s.nextInt();
+
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n; j++) {
+                System.out.print(j + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+```
+**Input:**  
+```
+4
+```
+**Output:**  
+```
+1 2 3 4  
+1 2 3 4  
+1 2 3 4  
+1 2 3 4  
+```
+---
+
+### **139. Create a Star Pattern Like a Christmas Tree Using Nested Loops**  
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int n = s.nextInt();
+
+        // Printing the tree layers
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i + 1; j++) {
+                for (int k = j; k < n + 1; k++) {
+                    System.out.print(" ");
+                }
+                for (int k = 1; k <= (2 * j - 1); k++) {
+                    System.out.print("*");
+                }
+                System.out.println();
+            }
+        }
+
+        // Printing the tree trunk
+        for (int i = 0; i < n / 2; i++) {
+            for (int j = 0; j < n; j++) {
+                if (j == n - 1) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+    }
+}
+```
+**Input:**  
+```
+5
+```
+**Output:**  
+```
+    *  
+   ***  
+  *****  
+    *  
+   ***  
+  *****  
+ ******  
+    *  
+   ***  
+  *****  
+ ******  
+*********  
+    *  
+    *  
+```
+---
+
+### **140. Perform Matrix Addition Using Nested Loops**  
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int n = s.nextInt();
+        int[][] a = new int[n][n];
+        int[][] b = new int[n][n];
+
+        // Input first matrix
+        for (int i = 0; i < n; i++)
+            for (int j = 0; j < n; j++)
+                a[i][j] = s.nextInt();
+
+        // Input second matrix
+        for (int i = 0; i < n; i++)
+            for (int j = 0; j < n; j++)
+                b[i][j] = s.nextInt();
+
+        // Printing the sum of matrices
+        System.out.println("Result:");
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++)
+                System.out.print((a[i][j] + b[i][j]) + " ");
+            System.out.println();
+        }
+    }
+}
+```
+**Input:**  
+```
+2  
+1 2  
+3 4  
+5 6  
+7 8  
+```
+**Output:**  
+```
+Result:  
+6 8  
+10 12  
+```
+
