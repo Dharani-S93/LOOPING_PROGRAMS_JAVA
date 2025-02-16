@@ -4312,3 +4312,490 @@ Result:
 10 12  
 ```
 
+### **41. Print a Fibonacci Sequence Using Recursion**
+```java
+import java.util.*;
+
+public class Main {
+    public static int fibonacci(int n) {
+        if (n <= 1) return n;
+        return fibonacci(n - 1) + fibonacci(n - 2);
+    }
+
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int n = s.nextInt();
+        for (int i = 0; i < n; i++)
+            System.out.print(fibonacci(i) + " ");
+    }
+}
+```
+
+---
+
+### **142. Implement a Switch Case That Calculates Tax Based on Income**
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        double income = s.nextDouble();
+        double tax = 0;
+
+        switch ((int) income / 10000) {
+            case 0, 1, 2: tax = 0; break;
+            case 3, 4: tax = 0.05 * income; break;
+            case 5, 6, 7: tax = 0.10 * income; break;
+            default: tax = 0.15 * income;
+        }
+        System.out.println("Tax: " + tax);
+    }
+}
+```
+
+---
+
+### **143. Generate Prime Numbers in a Given Range Using a Loop**
+```java
+import java.util.*;
+
+public class Main {
+    public static boolean isPrime(int n) {
+        if (n < 2) return false;
+        for (int i = 2; i * i <= n; i++)
+            if (n % i == 0) return false;
+        return true;
+    }
+
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int start = s.nextInt(), end = s.nextInt();
+
+        for (int i = start; i <= end; i++)
+            if (isPrime(i)) System.out.print(i + " ");
+    }
+}
+```
+
+---
+
+### **144. Input Validation Program with a Loop**
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int num;
+
+        while (true) {
+            num = s.nextInt();
+            if (num >= 1 && num <= 100) break;
+            System.out.println("Invalid input, enter a number between 1 and 100:");
+        }
+
+        System.out.println("Valid input: " + num);
+    }
+}
+```
+
+
+### **146. Implement Binary Search in a Sorted Array**
+```java
+import java.util.*;
+
+public class Main {
+    public static int binarySearch(int[] arr, int key) {
+        int left = 0, right = arr.length - 1;
+        
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            if (arr[mid] == key) return mid;
+            if (arr[mid] < key) left = mid + 1;
+            else right = mid - 1;
+        }
+        return -1;
+    }
+
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int n = s.nextInt(), arr[] = new int[n];
+
+        for (int i = 0; i < n; i++) arr[i] = s.nextInt();
+        int key = s.nextInt();
+
+        int result = binarySearch(arr, key);
+        System.out.println(result == -1 ? "Not found" : "Found at index " + result);
+    }
+}
+```
+
+---
+
+### **147. Implement Linear Search for a Number in an Array**
+```java
+import java.util.*;
+
+public class Main {
+    public static int linearSearch(int[] arr, int key) {
+        for (int i = 0; i < arr.length; i++)
+            if (arr[i] == key) return i;
+        return -1;
+    }
+
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int n = s.nextInt(), arr[] = new int[n];
+
+        for (int i = 0; i < n; i++) arr[i] = s.nextInt();
+        int key = s.nextInt();
+
+        int result = linearSearch(arr, key);
+        System.out.println(result == -1 ? "Not found" : "Found at index " + result);
+    }
+}
+```
+
+---
+
+### **148. Find the Largest Number Using a Method**
+```java
+import java.util.*;
+
+public class Main {
+    public static int findLargest(int[] arr) {
+        int max = arr[0];
+        for (int num : arr)
+            if (num > max) max = num;
+        return max;
+    }
+
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int n = s.nextInt(), arr[] = new int[n];
+
+        for (int i = 0; i < n; i++) arr[i] = s.nextInt();
+        System.out.println("Largest: " + findLargest(arr));
+    }
+}
+```
+
+---
+
+### **149. Count the Occurrence of Each Character in a String**
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        String str = s.nextLine();
+        int[] freq = new int[256];
+
+        for (char c : str.toCharArray()) freq[c]++;
+        for (int i = 0; i < 256; i++)
+            if (freq[i] > 0) System.out.println((char) i + ": " + freq[i]);
+    }
+}
+```
+
+
+
+### **150. Perform Matrix Multiplication using Nested Loops**
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int n1 = s.nextInt(), m1 = s.nextInt();
+        int[][] mat1 = new int[n1][m1];
+        for (int i = 0; i < n1; i++)
+            for (int j = 0; j < m1; j++)
+                mat1[i][j] = s.nextInt();
+
+        int n2 = s.nextInt(), m2 = s.nextInt();
+        int[][] mat2 = new int[n2][m2];
+        for (int i = 0; i < n2; i++)
+            for (int j = 0; j < m2; j++)
+                mat2[i][j] = s.nextInt();
+
+        if (m1 != n2) {
+            System.out.println("Multiplication not possible");
+            return;
+        }
+
+        int[][] result = new int[n1][m2];
+        for (int i = 0; i < n1; i++)
+            for (int j = 0; j < m2; j++)
+                for (int k = 0; k < m1; k++)
+                    result[i][j] += mat1[i][k] * mat2[k][j];
+
+        for (int[] row : result) {
+            for (int val : row)
+                System.out.print(val + " ");
+            System.out.println();
+        }
+    }
+}
+```
+
+---
+
+### **151. Implement a Stack using Control Flow Statements**
+```java
+import java.util.*;
+
+public class Main {
+    static int top = -1;
+    static int[] stack = new int[5];
+
+    public static void push(int val) {
+        if (top == 4) {
+            System.out.println("Stack Overflow");
+            return;
+        }
+        stack[++top] = val;
+    }
+
+    public static void pop() {
+        if (top == -1) {
+            System.out.println("Stack Underflow");
+            return;
+        }
+        System.out.println(stack[top--]);
+    }
+
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        push(s.nextInt());
+        push(s.nextInt());
+        pop();
+        pop();
+        pop();
+    }
+}
+```
+
+---
+
+### **152. Implement a Queue using Loops and Conditional Statements**
+```java
+import java.util.*;
+
+public class Main {
+    static int front = 0, rear = -1;
+    static int[] queue = new int[5];
+
+    public static void enqueue(int val) {
+        if (rear == 4) {
+            System.out.println("Queue Full");
+            return;
+        }
+        queue[++rear] = val;
+    }
+
+    public static void dequeue() {
+        if (front > rear) {
+            System.out.println("Queue Empty");
+            return;
+        }
+        System.out.println(queue[front++]);
+    }
+
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        enqueue(s.nextInt());
+        enqueue(s.nextInt());
+        dequeue();
+        dequeue();
+        dequeue();
+    }
+}
+```
+
+---
+
+### **153. Create a Simple Bank Account**
+```java
+import java.util.*;
+
+public class Main {
+    static double balance = 0;
+
+    public static void deposit(double amount) {
+        balance += amount;
+    }
+
+    public static void withdraw(double amount) {
+        if (amount > balance) {
+            System.out.println("Insufficient Balance");
+        } else {
+            balance -= amount;
+        }
+    }
+
+    public static void checkBalance() {
+        System.out.println("Balance: " + balance);
+    }
+
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        deposit(s.nextDouble());
+        withdraw(s.nextDouble());
+        checkBalance();
+    }
+}
+```
+
+---
+
+### **154. Simple Ticket Reservation System**
+```java
+import java.util.*;
+
+public class Main {
+    static int seats = 5;
+
+    public static void bookTicket() {
+        if (seats > 0) {
+            seats--;
+            System.out.println("Ticket Booked! Remaining: " + seats);
+        } else {
+            System.out.println("No Seats Available");
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        for (int i = 0; i < 6; i++) bookTicket();
+    }
+}
+```
+
+---
+
+### **155. Calculate Power Using Recursion**
+```java
+import java.util.*;
+
+public class Main {
+    public static int power(int base, int exp) {
+        if (exp == 0) return 1;
+        return base * power(base, exp - 1);
+    }
+
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        System.out.println(power(s.nextInt(), s.nextInt()));
+    }
+}
+```
+
+---
+
+### **156. Recursive Factorial Calculation**
+```java
+import java.util.*;
+
+public class Main {
+    public static long factorial(int n) {
+        if (n == 0) return 1;
+        return n * factorial(n - 1);
+    }
+
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        System.out.println(factorial(s.nextInt()));
+    }
+}
+```
+
+---
+
+### **157. Recursive Fibonacci Sequence**
+```java
+import java.util.*;
+
+public class Main {
+    public static int fibonacci(int n) {
+        if (n <= 1) return n;
+        return fibonacci(n - 1) + fibonacci(n - 2);
+    }
+
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        System.out.println(fibonacci(s.nextInt()));
+    }
+}
+```
+
+---
+
+### **158. Number Guessing Game**
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int target = (int) (Math.random() * 100) + 1, guess;
+
+        while (true) {
+            guess = s.nextInt();
+            if (guess > target)
+                System.out.println("Too High!");
+            else if (guess < target)
+                System.out.println("Too Low!");
+            else {
+                System.out.println("Correct!");
+                break;
+            }
+        }
+    }
+}
+```
+
+---
+
+### **159. Print Checkerboard Pattern**
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int size = s.nextInt();
+
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++)
+                System.out.print((i + j) % 2 == 0 ? "* " : "  ");
+            System.out.println();
+        }
+    }
+}
+```
+
+---
+
+### **160. Vending Machine System Using Switch**
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int choice = s.nextInt();
+
+        switch (choice) {
+            case 1: System.out.println("Dispensing Coffee"); break;
+            case 2: System.out.println("Dispensing Tea"); break;
+            case 3: System.out.println("Dispensing Soda"); break;
+            default: System.out.println("Invalid Choice");
+        }
+    }
+}
+```
+
+
