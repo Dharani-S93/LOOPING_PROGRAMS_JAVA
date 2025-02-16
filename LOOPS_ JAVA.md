@@ -28,12 +28,9 @@ public class Main {
 }
 ```
 
-**Input:**  
+
 ```
 5
-```
-**Output:**  
-```
 Positive
 ```
 
@@ -1270,7 +1267,9 @@ public class Main {
             case '*': System.out.println("Result: " + (a * b)); break;
             case '/': 
                 if (b != 0) System.out.println("Result: " + (a / b));
-                else System.out.println("Cannot divide by zero");
+                else{
+                     System.out.println("Cannot divide by zero");
+                     }
                 break;
             default: System.out.println("Invalid operator");
         }
@@ -3852,7 +3851,6 @@ public class Main {
 1 3 3 1  
 1 4 6 4 1  
 ```
-Thanks for your patience! Here are the remaining programs with input and output examples.  
 
 ---
 
