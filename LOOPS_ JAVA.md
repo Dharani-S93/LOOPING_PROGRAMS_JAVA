@@ -1,4 +1,3 @@
-
 ## Looping in Java allows executing a block of code multiple times until a condition is met.
 ```
 There are three main types of loops:
