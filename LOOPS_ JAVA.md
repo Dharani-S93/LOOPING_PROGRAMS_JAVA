@@ -6,6 +6,7 @@ While Loop – Executes the loop as long as the condition remains true.
 Do-While Loop – Similar to while but ensures at least one execution before checking the condition.
 Loops help in reducing code repetition, making programs efficient and readable. Nested loops allow loops inside another loop for complex iterations.
 
+
 `````
 ### 1. Check whether a number is positive or negative  
 ```java   
@@ -26,6 +27,7 @@ public class Main {
     }
 }
 ```
+
 
 
 ```
